@@ -47,7 +47,7 @@ return packer.startup(function(use)
     use "windwp/nvim-autopairs"         -- Autopairs, integrates with both cmp and treesitter
     use "lewis6991/gitsigns.nvim"       -- Git status meta information in left vertical-bar
     use 'tpope/vim-fugitive'            -- Git for vim
-    use "akinsho/toggleterm.nvim"
+    use "akinsho/toggleterm.nvim"       -- Embedded term on C-\
     use "folke/which-key.nvim"
     use {
         'nvim-lualine/lualine.nvim',
@@ -74,14 +74,6 @@ return packer.startup(function(use)
         end
     }
 
-    -- cmp plugins
-    use "hrsh7th/nvim-cmp" -- The completion plugin
-    use "hrsh7th/cmp-buffer" -- buffer completions
-    use "hrsh7th/cmp-path" -- path completions
-    use "hrsh7th/cmp-cmdline" -- cmdline completions
-    use "saadparwaiz1/cmp_luasnip" -- snippet completions
-    use "hrsh7th/cmp-nvim-lsp"
-
     -- ✅ Colorschemes
     use "lunarvim/colorschemes"       -- A bunch of colorschemes you can try out
     use "lunarvim/darkplus.nvim"
@@ -105,11 +97,22 @@ return packer.startup(function(use)
     use 'nvim-telescope/telescope-media-files.nvim'
 
     -- cmp completions
-    -- use "hrsh7th/nvim-cmp"
-    -- use "hrsh7th/cmp-buffer"
+    use "hrsh7th/nvim-cmp" -- The completion plugin
+    use "hrsh7th/cmp-buffer" -- buffer completions
+    use "hrsh7th/cmp-path" -- path completions
+    use "hrsh7th/cmp-cmdline" -- cmdline completions
+    use "saadparwaiz1/cmp_luasnip" -- snippet completions
+    use "hrsh7th/cmp-nvim-lsp"
 
     -- Bufferline
     use "akinsho/bufferline.nvim"
+
+    -- Treesitter
+    use {
+        "nvim-treesitter/nvim-treesitter",
+        run = ":TSUpdate",
+    }
+    use "JoosepAlviste/nvim-ts-context-commentstring"
 
     -- Prettier
     use "prettier/vim-prettier"

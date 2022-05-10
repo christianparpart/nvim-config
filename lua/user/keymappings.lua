@@ -15,6 +15,8 @@ local keymap = vim.api.nvim_set_keymap
 --   command_mode = "c",
 
 -- Normal --
+keymap("n", "<S-C>", ":bd<CR>", opts) -- close (delete) buffer
+
 -- ✅ Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)
