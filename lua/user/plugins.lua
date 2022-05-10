@@ -56,6 +56,25 @@ return packer.startup(function(use)
         },
         tag = 'nightly' -- optional, updated every week. (see issue #1193)
     }
+    use {
+        "folke/trouble.nvim",
+        requires = "kyazdani42/nvim-web-devicons",
+        config = function()
+            require("trouble").setup {
+                -- your configuration comes here
+                -- or leave it empty to use the default settings
+                -- refer to the configuration section below
+            }
+        end
+    }
+
+    -- cmp plugins
+    use "hrsh7th/nvim-cmp" -- The completion plugin
+    use "hrsh7th/cmp-buffer" -- buffer completions
+    use "hrsh7th/cmp-path" -- path completions
+    use "hrsh7th/cmp-cmdline" -- cmdline completions
+    use "saadparwaiz1/cmp_luasnip" -- snippet completions
+    use "hrsh7th/cmp-nvim-lsp"
 
     -- ✅ Colorschemes
     use "lunarvim/colorschemes"       -- A bunch of colorschemes you can try out

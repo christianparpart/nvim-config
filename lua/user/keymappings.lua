@@ -23,11 +23,10 @@ keymap("n", "<C-l>", "<C-w>l", opts)
 
 keymap("n", "<S-t>", ":tabnew<CR>", opts)
 
---keymap("n", "<C-e>", ":Lex 30<cr>", opts)
--- Nvimtree
+-- ✅ Nvimtree
 keymap("n", "<C-e>", ":NvimTreeToggle<cr>", opts)
 
--- Resize with arrows
+-- ✅ Resize with arrows
 keymap("n", "<C-Up>", ":resize -2<CR>", opts)
 keymap("n", "<C-Down>", ":resize +2<CR>", opts)
 keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
@@ -37,7 +36,13 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
 
--- Visual --
+-- ✅ Trouble (better quickfix window)
+keymap("n", "<leader>xx", "<cmd>Trouble<cr>", opts)
+keymap("n", "<leader>xw", "<cmd>Trouble workspace_diagnostics<cr>", opts)
+keymap("n", "<leader>xd", "<cmd>Trouble document_diagnostics<cr>", opts)
+keymap("n", "<leader>xl", "<cmd>Trouble loclist<cr>", opts)
+keymap("n", "<leader>xq", "<cmd>Trouble quickfix<cr>", opts)
+keymap("n", "gR", "<cmd>Trouble lsp_references<cr>", opts)
 
 -- Terminal --
 -- Better terminal navigation
