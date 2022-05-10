@@ -40,13 +40,19 @@ packer.init {
 
 -- Install your plugins here
 return packer.startup(function(use)
-    -- ✅ My plugins here
+    -- ✅ MY PLUGINS HERE
     use "wbthomason/packer.nvim"        -- Have packer manage itself
     use "nvim-lua/popup.nvim"           -- An implementation of the Popup API from vim in Neovim
     use "nvim-lua/plenary.nvim"         -- Useful lua functions used ny lots of plugins
     use "windwp/nvim-autopairs"         -- Autopairs, integrates with both cmp and treesitter
     use "lewis6991/gitsigns.nvim"       -- Git status meta information in left vertical-bar
     use 'tpope/vim-fugitive'            -- Git for vim
+    use "akinsho/toggleterm.nvim"
+    use "folke/which-key.nvim"
+    use {
+        'nvim-lualine/lualine.nvim',
+        requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+    }
     -- use 'kyazdani42/nvim-web-devicons'
     -- use 'kyazdani42/nvim-tree.lua'
     use {
@@ -105,7 +111,7 @@ return packer.startup(function(use)
     -- Bufferline
     use "akinsho/bufferline.nvim"
 
-    -- Prettier 
+    -- Prettier
     use "prettier/vim-prettier"
 
     -- Github copilot
