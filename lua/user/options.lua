@@ -38,6 +38,7 @@ local options = {
     updatetime = 300,                        -- faster completion (4000ms default)
     wrap = false,                            -- display lines as one long line
     writebackup = false,                     -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
+    list = true,
 }
 
 vim.opt.shortmess:append "c"
@@ -48,4 +49,7 @@ end
 
 vim.cmd "set whichwrap+=<,>,[,],h,l"
 vim.cmd [[set iskeyword+=-]]
-
+vim.cmd [[
+    let g:indentLine_char_list = ['│', '│', '│', '│']
+    set listchars=tab:\│\ ,trail:·
+]]

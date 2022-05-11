@@ -49,6 +49,7 @@ return packer.startup(function(use)
     use 'tpope/vim-fugitive'            -- Git for vim
     use "akinsho/toggleterm.nvim"       -- Embedded term on C-\
     use "folke/which-key.nvim"
+    use "yggdroot/indentline" -- visualize indentation levels
     use {
         'nvim-lualine/lualine.nvim',
         requires = { 'kyazdani42/nvim-web-devicons', opt = true }
