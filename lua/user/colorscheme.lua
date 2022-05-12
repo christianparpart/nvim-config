@@ -15,7 +15,7 @@ vim.cmd [[
 
     hi Search gui=bold guifg=yellow
 
-    hi LspReferenceText  gui=bold guibg=#6060A0 guifg=#FFFFFF ctermbg=237
+    hi LspReferenceText  gui=none guibg=#4040A0 guifg=#C0C0C0 ctermbg=237
     hi LspReferenceRead  gui=bold guibg=#40A040 guifg=#FFFFFF ctermbg=237
     hi LspReferenceWrite gui=bold guibg=#A04040 guifg=#FFFFFF ctermbg=237
 ]]
