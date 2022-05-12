@@ -3,16 +3,18 @@ local options = {
     backup = false,                          -- creates a backup file
     clipboard = "unnamedplus",               -- allows neovim to access the system clipboard
     cmdheight = 2,                           -- more space in the neovim command line for displaying messages
+    colorcolumn = '110',
     completeopt = { "menuone", "noselect" }, -- mostly just for cmp
     conceallevel = 0,                        -- so that `` is visible in markdown files
     cursorline = true,                       -- highlight the current line
     expandtab = true,                        -- convert tabs to spaces
     fileencoding = "utf-8",                  -- the encoding written to a file
-    foldmethod = 'marker',
     foldenable = true,
+    foldmethod = 'marker',
     guifont = "monospace:h17",               -- the font used in graphical neovim applications
     hlsearch = true,                         -- highlight all matches on previous search pattern
     ignorecase = true,                       -- ignore case in search patterns
+    list = true,
     modeline = true,
     modelines = 5,
     mouse = "a",                             -- allow the mouse to be used in neovim
@@ -38,7 +40,6 @@ local options = {
     updatetime = 300,                        -- faster completion (4000ms default)
     wrap = false,                            -- display lines as one long line
     writebackup = false,                     -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
-    list = true,
 }
 
 vim.opt.shortmess:append "c"
