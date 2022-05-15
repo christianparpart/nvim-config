@@ -52,6 +52,9 @@ return packer.startup(function(use)
     use "yggdroot/indentline"           -- visualize indentation levels
     use 'editorconfig/editorconfig-vim' -- tweaks local VIM session based on .editorconfig
     use "lukas-reineke/indent-blankline.nvim"
+    use "puremourning/vimspector"
+    use "machakann/vim-highlightedyank"
+    use "tomtom/tcomment_vim"
     use {
         'nvim-lualine/lualine.nvim',
         requires = { 'kyazdani42/nvim-web-devicons', opt = true }
@@ -86,10 +89,10 @@ return packer.startup(function(use)
     use "joshdick/onedark.vim"
 
     -- snippets
-    use "L3MON4D3/LuaSnip" --snippet engine
-    use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
-    use "SirVer/ultisnips"
-    use "mlaursen/vim-react-snippets"
+    -- use "L3MON4D3/LuaSnip" --snippet engine
+    -- use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
+    -- use "SirVer/ultisnips"
+    -- use "mlaursen/vim-react-snippets"
 
     -- LSP
     use "neovim/nvim-lspconfig" -- enable LSP
@@ -104,7 +107,7 @@ return packer.startup(function(use)
     use "hrsh7th/cmp-buffer" -- buffer completions
     use "hrsh7th/cmp-path" -- path completions
     use "hrsh7th/cmp-cmdline" -- cmdline completions
-    use "saadparwaiz1/cmp_luasnip" -- snippet completions
+    -- use "saadparwaiz1/cmp_luasnip" -- snippet completions
     use "hrsh7th/cmp-nvim-lsp"
 
     -- Bufferline
