@@ -40,6 +40,13 @@ lspconfig.clangd.setup {
 	},
 }
 
+vim.cmd [[
+    augroup my_lsp
+        autocmd!
+        nnoremap <A-o> :ClangdSwitchSourceHeader<CR>
+    augroup end
+]]
+
 -- {{{ jsonls
 local default_schemas = nil
 local status_ok, jsonls_settings = pcall(require, "nlspsettings.jsonls")
