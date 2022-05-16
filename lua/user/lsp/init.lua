@@ -20,6 +20,18 @@ lspconfig.sumneko_lua.setup {
     }
 }
 
+lspconfig.solc.setup {
+    on_attach = lspHandlers.on_attach,
+    capabilities = lspHandlers.capabilities,
+    cmd = {vim.env.HOME .. "/work/solidity/build/solc/solc", "--lsp"},
+    settings = {
+        ['include-paths'] = {
+            "/foo",
+            "foo/bar",
+        }
+    }
+}
+
 --     local opts = {
 --         on_attach = require("user.lsp.handlers").on_attach,
 --         capabilities = require("user.lsp.handlers").capabilities,
