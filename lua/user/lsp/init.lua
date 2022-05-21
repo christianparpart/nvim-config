@@ -56,6 +56,7 @@ vim.cmd [[
     augroup my_lsp
         autocmd!
         nnoremap <A-o> :ClangdSwitchSourceHeader<CR>
+        nnoremap ø     :ClangdSwitchSourceHeader<CR>
     augroup end
 ]]
 
