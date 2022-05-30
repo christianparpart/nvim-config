@@ -25,10 +25,10 @@ lspconfig.solc.setup {
     capabilities = lspHandlers.capabilities,
     cmd = {vim.env.HOME .. "/work/solidity/build/solc/solc", "--lsp"},
     settings = {
-        ['include-paths'] = {
-            "/foo",
-            "foo/bar",
-        }
+        -- ['include-paths'] = {
+        --     "/foo",
+        --     "foo/bar",
+        -- }
     }
 }
 
