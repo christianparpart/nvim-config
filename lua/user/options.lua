@@ -54,3 +54,6 @@ vim.cmd [[
     let g:indentLine_char_list = ['│', '│', '│', '│']
     set listchars=tab:\│\ ,trail:·
 ]]
+
+-- execute recorded macro in register q:
+vim.cmd [[ nnoremap <C-Space> @q ]]
