@@ -5,6 +5,10 @@ end
 
 local actions = require "telescope.actions"
 
+vim.cmd [[ 
+    nnoremap <C-B> <cmd>Telescope buffers<cr>
+]]
+
 telescope.setup {
   defaults = {
 
