@@ -15,7 +15,14 @@ local keymap = vim.api.nvim_set_keymap
 --   command_mode = "c",
 
 -- Normal --
-keymap("n", "<S-C>", ":bd<CR>", opts) -- close (delete) buffer
+keymap("n", "<leader>bd", ":bd<CR>", opts) -- close (delete) buffer
+keymap("n", "<S-T>", ":tabnew<CR>", opts)
+keymap("n", "<S-H>", ":tabprev<CR>", opts)
+keymap("n", "<S-L>", ":tabnext<CR>", opts)
+keymap("n", "<S-C>", ":tabclose<CR>", opts)
+
+-- execute recorded macro in register q:
+vim.cmd [[ nnoremap <C-Space> @q ]]
 
 -- ✅ Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
@@ -35,8 +42,8 @@ keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
 -- ✅ Navigate buffers
-keymap("n", "<S-l>", ":bnext<CR>", opts)
-keymap("n", "<S-h>", ":bprevious<CR>", opts)
+-- keymap("n", "<S-l>", ":bnext<CR>", opts)
+-- keymap("n", "<S-h>", ":bprevious<CR>", opts)
 
 -- ✅ Trouble (better quickfix window)
 keymap("n", "<leader>xx", "<cmd>Trouble<cr>", opts)
