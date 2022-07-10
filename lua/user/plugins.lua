@@ -55,6 +55,7 @@ return packer.startup(function(use)
     use "puremourning/vimspector"
     use "machakann/vim-highlightedyank"
     use "tomtom/tcomment_vim"
+    use "peterhoeg/vim-qml"
     use {
         'nvim-lualine/lualine.nvim',
         requires = { 'kyazdani42/nvim-web-devicons', opt = true }
