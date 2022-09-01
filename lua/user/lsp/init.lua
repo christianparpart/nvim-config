@@ -24,6 +24,7 @@ lspconfig.solc.setup {
     on_attach = lspHandlers.on_attach,
     capabilities = lspHandlers.capabilities,
     cmd = {vim.env.HOME .. "/work/solidity/build/solc/solc", "--lsp"},
+    trace = "verbose",
     settings = {
         ['file-load-strategy'] = 'directly-opened-and-on-import',
         -- ['include-paths'] = {
