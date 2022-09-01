@@ -82,11 +82,11 @@ return packer.startup(function(use)
     }
 
     -- ✅ Colorschemes
-    use "lunarvim/colorschemes"       -- A bunch of colorschemes you can try out
-    use "lunarvim/darkplus.nvim"
-    use "folke/tokyonight.nvim"
-    use "ellisonleao/gruvbox.nvim"
-    use "lifepillar/vim-gruvbox8"
+    use "lunarvim/colorschemes"
+    -- use "lunarvim/darkplus.nvim"
+    -- use "folke/tokyonight.nvim"
+    -- use "ellisonleao/gruvbox.nvim"
+    -- use "lifepillar/vim-gruvbox8"
     use "joshdick/onedark.vim"
 
     -- snippets
@@ -96,8 +96,13 @@ return packer.startup(function(use)
     -- use "mlaursen/vim-react-snippets"
 
     -- LSP
-    use "neovim/nvim-lspconfig" -- enable LSP
-    use "williamboman/nvim-lsp-installer" -- simple to use language server installer
+    if false then
+        use "neovim/nvim-lspconfig" -- enable LSP
+        use "williamboman/nvim-lsp-installer" -- simple to use language server installer
+    else
+        -- Use coc.nvim until neovim supports semantic tokens.
+        use {'neoclide/coc.nvim', branch = 'release'}
+    end
 
     -- Telescope
     use "nvim-telescope/telescope.nvim"

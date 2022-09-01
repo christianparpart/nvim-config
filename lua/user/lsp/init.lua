@@ -25,6 +25,7 @@ lspconfig.solc.setup {
     capabilities = lspHandlers.capabilities,
     cmd = {vim.env.HOME .. "/work/solidity/build/solc/solc", "--lsp"},
     settings = {
+        ['file-load-strategy'] = 'directly-opened-and-on-import',
         -- ['include-paths'] = {
         --     "/foo",
         --     "foo/bar",
