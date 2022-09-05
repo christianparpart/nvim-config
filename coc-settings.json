@@ -1,0 +1,49 @@
+{
+	"codeLens.enable": true,
+	"diagnostic.errorSign": "❗",
+	"diagnostic.warningSign": "⚠️",
+	"diagnostic.infoSign": "ℹ️",
+	"diagnostic.hintSign": "💡",
+    "diagnostic.enableMessage": "jump",
+	"suggest.enablePreview": true,
+	"clangd": {
+		"fallbackFlags": [
+			"-std=c++20"
+		],
+		"checkUpdates": true,
+		"arguments": [
+			"--clang-tidy",
+			"--completion-style=detailed",
+			"--header-insertion-decorators",
+			"--enable-config",
+			"-j=12",
+			"--log=verbose",
+			"--pretty"
+		]
+	},
+	"semanticTokens.filetypes": [
+		"*"
+	],
+	"languageserver": {
+		"solidity": {
+			"command": "/home/trapni/work/solidity/build/solc/solc",
+			"args": [
+				"--lsp"
+			],
+			"settings": { // Solidity Standard-JSON's input settings.
+				"remappings": [],
+				"evmVersion": "berlin",
+                "file-load-strategy": "directly-opened-and-on-import"
+			},
+			"trace.server": "verbose",
+			"rootPatterns": [
+				"compile_commands.json",
+				".git/"
+			],
+			"filetypes": [
+				"solidity"
+			]
+		}
+	}
+}
+
