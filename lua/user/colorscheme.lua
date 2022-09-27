@@ -31,6 +31,8 @@ vim.cmd [[
     hi link CocHighlightRead  LspReferenceRead
     hi link CocHighlightWrite LspReferenceWrite
 
+    hi CocInlayHint guifg=#9d8f5e gui=italic
+
 ]]
 
 -- vim.cmd [[ autocmd BufEnter,CursorHold,InsertLeave <buffer> lua vim.lsp.buf.semantic_tokens_full() ]]
