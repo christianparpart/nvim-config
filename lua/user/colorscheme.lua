@@ -26,6 +26,8 @@ vim.cmd [[
     hi DiagnosticUnderlineInformation gui=undercurl guisp=green
     hi DiagnosticUnderlineWarning gui=undercurl guisp=yellow
 
+    hi DiagnosticVirtualTextHint guifg=gray
+
     " TODO: port over remaining (Comment, Diagnostics...) to coc.nvim hilight groups (see `:h coc-highlight`)
     hi link CocHighlightText  LspReferenceText
     hi link CocHighlightRead  LspReferenceRead
