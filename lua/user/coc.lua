@@ -54,5 +54,8 @@ augroup my_coc
     " Run the Code Lens action on the current line.
     nmap <leader>cl  <Plug>(coc-codelens-action)
 
+    " Symbol renaming.
+    nmap <C-G>r <Plug>(coc-rename)
+
 augroup end
 ]]
