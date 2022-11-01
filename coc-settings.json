@@ -1,9 +1,16 @@
 {
 	"codeLens.enable": true,
+
+	//"diagnostic.errorSign": "💙",
+	//"diagnostic.warningSign": "⚠️",
+	//"diagnostic.infoSign": "ℹ️",
+	//"diagnostic.hintSign": "💡",
+
 	"diagnostic.errorSign": "❗",
 	"diagnostic.warningSign": "⚠️",
 	"diagnostic.infoSign": "ℹ️",
 	"diagnostic.hintSign": "💡",
+
     "diagnostic.enableMessage": "jump",
 	"suggest.enablePreview": true,
 	"clangd": {
