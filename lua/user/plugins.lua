@@ -56,6 +56,7 @@ return packer.startup(function(use)
     use "machakann/vim-highlightedyank"
     use "tomtom/tcomment_vim"
     use "peterhoeg/vim-qml"
+    use "rhysd/conflict-marker.vim"     -- Better highlight of git conflict markers and ability to easier jump around
     use {
         'nvim-lualine/lualine.nvim',
         requires = { 'kyazdani42/nvim-web-devicons', opt = true }
