@@ -56,6 +56,7 @@ return packer.startup(function(use)
     use "lukas-reineke/indent-blankline.nvim"
     use "puremourning/vimspector"
     use "machakann/vim-highlightedyank"
+    use "dag/vim-fish"                  -- Fish shell syntax
     use "tomtom/tcomment_vim"
     use "peterhoeg/vim-qml"
     use "dag/vim-fish"                  -- Fish shell syntax
