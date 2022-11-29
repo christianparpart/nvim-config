@@ -40,6 +40,10 @@ augroup my_coc
     inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
                                   \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
+    " Formatting selected code.
+    xmap <leader>fs  <Plug>(coc-format-selected)
+    nmap <leader>fs  <Plug>(coc-format-selected)
+
     function! ShowDocumentation()
         if CocAction('hasProvider', 'hover')
             call CocActionAsync('doHover')
