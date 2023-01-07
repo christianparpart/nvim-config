@@ -44,6 +44,9 @@ augroup my_coc
     xmap <leader>fs  <Plug>(coc-format-selected)
     nmap <leader>fs  <Plug>(coc-format-selected)
 
+    nnoremap <leader>fd :CocCommand editor.action.formatDocument<CR>
+    nnoremap <leader>cr :CocCommand document.renameCurrentWord<CR>
+
     function! ShowDocumentation()
         if CocAction('hasProvider', 'hover')
             call CocActionAsync('doHover')
