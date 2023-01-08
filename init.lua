@@ -6,8 +6,8 @@ require "user.nvim-tree"
 require "user.autopairs"
 require "user.toggleterm"
 require "user.lualine"
-require "user.coc" -- coc.nvim, alternative to user.lsp (utilizing nvim's builtin lsp)
--- require "user.lsp"
+-- require "user.coc" -- coc.nvim, alternative to user.lsp (utilizing nvim's builtin lsp)
+require "user.lsp"
 require "user.keymappings"
 require "user.whichkey"
 require "user.telescope"

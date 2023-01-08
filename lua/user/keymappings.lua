@@ -22,7 +22,7 @@ keymap("n", "<S-L>", ":tabnext<CR>", opts)
 keymap("n", "<S-C>", ":tabclose<CR>", opts)
 
 -- execute recorded macro in register q:
-vim.cmd [[ nnoremap <C-Space> @q ]]
+-- vim.cmd [[ nnoremap <C-Space> @q ]]
 
 -- ✅ Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
@@ -51,6 +51,7 @@ keymap("n", "<leader>xw", "<cmd>Trouble workspace_diagnostics<cr>", opts)
 keymap("n", "<leader>xd", "<cmd>Trouble document_diagnostics<cr>", opts)
 keymap("n", "<leader>xl", "<cmd>Trouble loclist<cr>", opts)
 keymap("n", "<leader>xq", "<cmd>Trouble quickfix<cr>", opts)
+keymap("n", "<leader>xc", "<cmd>TroubleClose<cr>", opts)
 keymap("n", "gR", "<cmd>Trouble lsp_references<cr>", opts)
 
 -- Terminal --

@@ -4,7 +4,12 @@
 -- end
 -- require("user.lsp.lsp-installer")
 
-require("nvim-lsp-installer").setup {}
+local mason_ok, mason = pcall(require, "mason")
+if mason_ok then
+    mason.setup()
+end
+-- require("mason").setup()
+
 local lspconfig = require('lspconfig')
 local lspHandlers = require("user.lsp.handlers")
 lspHandlers.setup()
@@ -20,33 +25,12 @@ lspconfig.sumneko_lua.setup {
     }
 }
 
-lspconfig.solc.setup {
-    on_attach = lspHandlers.on_attach,
-    capabilities = lspHandlers.capabilities,
-    cmd = {vim.env.HOME .. "/work/solidity/build/solc/solc", "--lsp"},
-    trace = "verbose",
-    settings = {
-        ['file-load-strategy'] = 'directly-opened-and-on-import',
-        -- ['include-paths'] = {
-        --     "/foo",
-        --     "foo/bar",
-        -- }
-    }
-}
-
---     local opts = {
---         on_attach = require("user.lsp.handlers").on_attach,
---         capabilities = require("user.lsp.handlers").capabilities,
---     }
---     if server.name == "jsonls" then
---        opts = vim.tbl_deep_extend("force", require("user.lsp.settings.jsonls"), opts)
---    end
 lspconfig.clangd.setup {
     on_attach = lspHandlers.on_attach,
     capabilities = lspHandlers.capabilities,
 	settings = {
 		clangd = {
-            cmd = {"/usr/bin/clangd-11", "--clang-tidy"},
+            cmd = {"/usr/bin/clangd", "--clang-tidy"},
             checkUpdates = true,
             fallbackFlags = {"-std=c++17", "-Wall", "-Werror"},
             -- trace = "/tmp/clangd.trace.log",
@@ -59,6 +43,7 @@ vim.cmd [[
         autocmd!
         nnoremap <A-o> :ClangdSwitchSourceHeader<CR>
         nnoremap ø     :ClangdSwitchSourceHeader<CR>
+        nnoremap <silent> ga  <cmd>lua vim.lsp.buf.code_action()<CR>
     augroup end
 ]]
 

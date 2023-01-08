@@ -78,6 +78,12 @@ return packer.startup(function(use)
                 -- your configuration comes here
                 -- or leave it empty to use the default settings
                 -- refer to the configuration section below
+                height = 10,
+                auto_open = true, -- automatically open the list when you have diagnostics
+                auto_close = false, -- automatically close the list when you have no diagnostics
+                auto_preview = true, -- automatyically preview the location of the diagnostic. <esc> to close preview and go back to last window
+                auto_fold = false, -- automatically fold a file trouble list at creation
+                use_diagnostic_signs = true
             }
         end
     }
@@ -91,19 +97,17 @@ return packer.startup(function(use)
     use "joshdick/onedark.vim"
 
     -- snippets
-    -- use "L3MON4D3/LuaSnip" --snippet engine
+    use "L3MON4D3/LuaSnip" --snippet engine
     -- use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
-    -- use "SirVer/ultisnips"
+    use "SirVer/ultisnips"
     -- use "mlaursen/vim-react-snippets"
 
     -- LSP
-    if false then
-        use "neovim/nvim-lspconfig" -- enable LSP
-        use "williamboman/nvim-lsp-installer" -- simple to use language server installer
-    else
-        -- Use coc.nvim until neovim supports semantic tokens.
-        use {'neoclide/coc.nvim', branch = 'release'}
-    end
+    use {
+        "williamboman/mason.nvim",
+        "williamboman/mason-lspconfig.nvim",
+        "neovim/nvim-lspconfig"
+    }
 
     -- Telescope
     use "nvim-telescope/telescope.nvim"
@@ -115,6 +119,7 @@ return packer.startup(function(use)
     use "hrsh7th/cmp-cmdline" -- cmdline completions
     -- use "saadparwaiz1/cmp_luasnip" -- snippet completions
     use "hrsh7th/cmp-nvim-lsp"
+    use "hrsh7th/cmp-nvim-lsp-signature-help"
     use "hrsh7th/nvim-cmp" -- The completion plugin
 
     -- use "akinsho/bufferline.nvim"       -- Bufferline
