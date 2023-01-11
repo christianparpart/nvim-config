@@ -122,7 +122,7 @@ return packer.startup(function(use)
     use "hrsh7th/cmp-nvim-lsp-signature-help"
     use "hrsh7th/nvim-cmp" -- The completion plugin
 
-    -- use "akinsho/bufferline.nvim"       -- Bufferline
+    use "akinsho/bufferline.nvim"       -- Bufferline
     use "glepnir/spaceline.vim"         -- top(/bottom) navigation bar for buffers, tabs, ...
 
     -- Godbolt integration
