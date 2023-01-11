@@ -13,6 +13,10 @@ end
 local lspconfig = require('lspconfig')
 local lspHandlers = require("user.lsp.handlers")
 lspHandlers.setup()
+lspconfig.pyright.setup {
+    on_attach = lspHandlers.on_attach,
+    capabilities = lspHandlers.capabilities,
+}
 lspconfig.sumneko_lua.setup {
     on_attach = lspHandlers.on_attach,
     capabilities = lspHandlers.capabilities,
