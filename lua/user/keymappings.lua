@@ -19,7 +19,7 @@ keymap("n", "<leader>bd", ":bd<CR>", opts) -- close (delete) buffer
 keymap("n", "<S-T>", ":tabnew<CR>", opts)
 keymap("n", "<S-H>", ":tabprev<CR>", opts)
 keymap("n", "<S-L>", ":tabnext<CR>", opts)
-keymap("n", "<S-C>", ":tabclose<CR>", opts)
+keymap("n", "<S-C>", ":bd<CR>", opts)
 
 -- execute recorded macro in register q:
 -- vim.cmd [[ nnoremap <C-Space> @q ]]
