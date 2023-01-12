@@ -130,9 +130,13 @@ return packer.startup(function(use)
 
     -- Treesitter
     use {
-        "nvim-treesitter/nvim-treesitter",
-        run = ":TSUpdate",
+        'm-demare/hlargs.nvim',
+        requires = { 'nvim-treesitter/nvim-treesitter' }
     }
+    -- use {
+    --     "nvim-treesitter/nvim-treesitter",
+    --     run = ":TSUpdate",
+    -- }
     use "JoosepAlviste/nvim-ts-context-commentstring"
 
     -- Prettier
