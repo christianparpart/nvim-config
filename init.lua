@@ -1,5 +1,4 @@
 require "user.plugins"
-require "user.bufferline"
 require "user.cmp"
 require "user.gitsigns"
 require "user.nvim-tree"
