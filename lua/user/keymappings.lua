@@ -14,12 +14,16 @@ local keymap = vim.api.nvim_set_keymap
 --   term_mode = "t",
 --   command_mode = "c",
 
--- Normal --
-keymap("n", "<leader>bd", ":bd<CR>", opts) -- close (delete) buffer
-keymap("n", "<S-T>", ":tabnew<CR>", opts)
-keymap("n", "<S-H>", ":tabprev<CR>", opts)
-keymap("n", "<S-L>", ":tabnext<CR>", opts)
-keymap("n", "<S-C>", ":bd<CR>", opts)
+-- Tab management
+keymap("n", "<S-t>", ":tabnew<CR>", opts)
+keymap("n", "<A-.>", ":tabnext<CR>", opts)
+keymap("n", "<A-,>", ":tabprev<CR>", opts)
+keymap("n", "<leader>tc", ":tabclose<CR>", opts)
+
+-- Buffer managementj
+keymap("n", "<S-h>", ":bp<CR>", opts)
+keymap("n", "<S-l>", ":bn<CR>", opts)
+keymap("n", "<S-c>", ":bd<CR>", opts)
 
 -- execute recorded macro in register q:
 -- vim.cmd [[ nnoremap <C-Space> @q ]]
@@ -29,8 +33,6 @@ keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
-
-keymap("n", "<S-t>", ":tabnew<CR>", opts)
 
 -- ✅ Nvimtree
 keymap("n", "<C-e>", ":NvimTreeToggle<cr>", opts)
