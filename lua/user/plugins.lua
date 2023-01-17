@@ -143,7 +143,7 @@ return packer.startup(function(use)
     -- Github copilot
     -- use "github/copilot.vim"
 
-    use 'wakatime/vim-wakatime'         -- automatic time tracking and metrics
+    -- use 'wakatime/vim-wakatime'         -- automatic time tracking and metrics
     -- Required by wakatime?
     use "kyazdani42/nvim-web-devicons"
 
