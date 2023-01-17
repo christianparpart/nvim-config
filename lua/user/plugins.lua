@@ -94,7 +94,8 @@ return packer.startup(function(use)
     -- use "folke/tokyonight.nvim"
     -- use "ellisonleao/gruvbox.nvim"
     -- use "lifepillar/vim-gruvbox8"
-    use "joshdick/onedark.vim"
+    -- use "joshdick/onedark.vim"
+    use "olimorris/onedarkpro.nvim"
 
     -- snippets
     use "L3MON4D3/LuaSnip" --snippet engine
