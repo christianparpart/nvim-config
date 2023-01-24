@@ -17,7 +17,7 @@ vim.cmd [[
         colorscheme onedark
         hi Search gui=bold guifg=yellow
         hi LspReferenceText  gui=none guibg=#393939 "guifg=#C0C0C0
-        hi LspReferenceRead  gui=bold guibg=#309930 "guifg=#FFFFFF
+        hi LspReferenceRead  gui=bold guibg=#105910 "guifg=#FFFFFF
         hi LspReferenceWrite gui=bold guibg=#994040 "guifg=#FFFFFF
 
         "hi LspReferenceText  gui=none guibg=#e9e9e9 "guifg=#C0C0C0
