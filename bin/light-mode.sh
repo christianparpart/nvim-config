@@ -15,11 +15,11 @@ function soft_sed()
 }
 
 soft_sed 's/--dark/--light/' \
-        ~/.gitconfig
+        "${HOME}/.gitconfig"
 
 soft_sed 's/colors: "default"/colors: "onelight"/' \
         "${HOME}/.config/contour/contour.yml" \
-        "${HOME}/.var/app/org.contourterminal.Contour/contour.yml"
+        "${HOME}/.var/app/org.contourterminal.Contour/config/contour/contour.yml"
 
 soft_sed 's/set background=dark/set background=light/' \
         "${HOME}/.config/nvim/lua/user/colorscheme.lua"
