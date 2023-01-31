@@ -58,7 +58,25 @@ require("onedarkpro").setup({
     colors = {
         dark_red = "require('onedarkpro.helpers').darken('red', 10, 'onedark')",
         cursorline = "#FF0000", -- This is optional. The default cursorline color is based on the background
+        onedark = {
+            bg = '#400000',
+        },
+        onelight = {
+            bg = '#FFFFFF',
+        },
         -- highlight_inactive_windows = true,
+    },
+    styles = {
+        comments = "italic",
+        methods = "bold",
+        keywords = "italic",
+        parameters = "italic",
+        functions = "bold",
+
+        -- This is also an option but my opinion is,
+        -- it washes out parameter highlighting with semantic tokens
+        -- in neovim 0.9+ so should be excluded
+        -- variables = "italic"
     },
     highlights = {
         CustomRedHighlight = {
