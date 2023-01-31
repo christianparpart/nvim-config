@@ -24,6 +24,7 @@ keymap("n", "<leader>tc", ":tabclose<CR>", opts)
 keymap("n", "<S-h>", ":bp<CR>", opts)
 keymap("n", "<S-l>", ":bn<CR>", opts)
 keymap("n", "<S-c>", ":bd<CR>", opts)
+keymap("n", "<leader>db", ":bp<bar>sp<bar>bn<bar>bd<CR>", opts)
 
 -- execute recorded macro in register q:
 -- vim.cmd [[ nnoremap <C-Space> @q ]]
