@@ -90,8 +90,8 @@ lualine.setup({
     },
     tabline = {
         -- buffers, , tabsbranch, filename
-        lualine_a = { 'buffers' },
-        lualine_b = {},
+        lualine_a = {},
+        lualine_b = { 'buffers' },
         lualine_c = {},
         lualine_x = {},
         lualine_y = {},
