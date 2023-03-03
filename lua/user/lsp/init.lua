@@ -17,17 +17,17 @@ lspconfig.pyright.setup {
     on_attach = lspHandlers.on_attach,
     capabilities = lspHandlers.capabilities,
 }
-lspconfig.lua_ls.setup {
-    on_attach = lspHandlers.on_attach,
-    capabilities = lspHandlers.capabilities,
-    settings = {
-        Lua = {
-            diagnostics = {
-                globals = { "vim" },
-            }
-        }
-    }
-}
+-- lspconfig.lua_ls.setup {
+--     on_attach = lspHandlers.on_attach,
+--     capabilities = lspHandlers.capabilities,
+--     settings = {
+--         Lua = {
+--             diagnostics = {
+--                 globals = { "vim" },
+--             }
+--         }
+--     }
+-- }
 
 local HOME = vim.fn.expand("$HOME")
 -- local contour_yml_schema_path = HOME ..  "/projects/contour/docs/contour.schema.json"
