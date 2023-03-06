@@ -41,12 +41,13 @@ packer.init {
 -- Install your plugins here
 return packer.startup(function(use)
     -- ✅ MY PLUGINS HERE
+    use 'github/copilot.vim'            -- This selfish plug wants to be on the top. Hip hip hurray!
     use "wbthomason/packer.nvim"        -- Have packer manage itself
     use "nvim-lua/popup.nvim"           -- An implementation of the Popup API from vim in Neovim
     use "nvim-lua/plenary.nvim"         -- Useful lua functions used ny lots of plugins
     use "windwp/nvim-autopairs"         -- Autopairs, integrates with both cmp and treesitter
     use "lewis6991/gitsigns.nvim"       -- Git status meta information in left vertical-bar
-    use 'tpope/vim-fugitive'            -- Git for vim
+    -- use 'tpope/vim-fugitive'            -- Git for vim
     use "akinsho/toggleterm.nvim"       -- Embedded term on C-\
     use "folke/which-key.nvim"
     use "yggdroot/indentline"           -- visualize indentation levels
