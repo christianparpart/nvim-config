@@ -47,7 +47,7 @@ return packer.startup(function(use)
     use "nvim-lua/plenary.nvim"         -- Useful lua functions used ny lots of plugins
     use "windwp/nvim-autopairs"         -- Autopairs, integrates with both cmp and treesitter
     use "lewis6991/gitsigns.nvim"       -- Git status meta information in left vertical-bar
-    -- use 'tpope/vim-fugitive'            -- Git for vim
+    use 'tpope/vim-fugitive'            -- Git for vim
     use "akinsho/toggleterm.nvim"       -- Embedded term on C-\
     use "folke/which-key.nvim"
     use "yggdroot/indentline"           -- visualize indentation levels
