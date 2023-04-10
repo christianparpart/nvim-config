@@ -6,9 +6,21 @@
 
 local mason_ok, mason = pcall(require, "mason")
 if mason_ok then
-    mason.setup()
+    mason.setup({
+        ui = {
+            icons = {
+                package_installed = "",
+                package_pending = "",
+                package_uninstalled = "",
+            },
+        }
+    })
 end
--- require("mason").setup()
+
+local mason_lspconfig_ok, mason_lspconfig = pcall(require, "mason-lspconfig")
+if mason_lspconfig_ok then
+    mason_lspconfig.setup()
+end
 
 local lspconfig = require('lspconfig')
 local lspHandlers = require("user.lsp.handlers")

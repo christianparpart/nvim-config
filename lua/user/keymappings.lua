@@ -28,6 +28,7 @@ keymap("n", "<leader>db", ":bp<bar>sp<bar>bn<bar>bd<CR>", opts)
 
 -- execute recorded macro in register q:
 -- vim.cmd [[ nnoremap <C-Space> @q ]]
+keymap("n", "<C-Space>", "@q", opts)
 
 -- ✅ Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
