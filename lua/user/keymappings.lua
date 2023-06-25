@@ -70,3 +70,7 @@ keymap("n", "<C-s>", ":Prettier :w<CR>", opts)
 -- keymap("n", "<leader>f", "<cmd>Telescope find_files<cr>", opts)
 keymap("n", "<C-p>", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
 keymap("n", "<c-t>", "<cmd>Telescope live_grep<cr>", opts)
+
+-- Copilot
+keymap("n", "[t", "<plug>(copilot-prev)", opts)
+keymap("n", "]t", "<plug>(copilot-next)", opts)
