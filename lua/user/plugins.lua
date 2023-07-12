@@ -45,7 +45,8 @@ return packer.startup(function(use)
     use "wbthomason/packer.nvim"        -- Have packer manage itself
     use "nvim-lua/popup.nvim"           -- An implementation of the Popup API from vim in Neovim
     use "nvim-lua/plenary.nvim"         -- Useful lua functions used ny lots of plugins
-    use "windwp/nvim-autopairs"         -- Autopairs, integrates with both cmp and treesitter
+    use "ionide/Ionide-vim"             -- F# language support
+    -- use "windwp/nvim-autopairs"         -- Autopairs, integrates with both cmp and treesitter
     use "lewis6991/gitsigns.nvim"       -- Git status meta information in left vertical-bar
     use 'tpope/vim-fugitive'            -- Git for vim
     use "akinsho/toggleterm.nvim"       -- Embedded term on C-\
@@ -109,7 +110,25 @@ return packer.startup(function(use)
     use {
         "williamboman/mason.nvim",
         "williamboman/mason-lspconfig.nvim",
-        "neovim/nvim-lspconfig"
+        "neovim/nvim-lspconfig",
+        opt = true,
+        event = "BufReadPre",
+        wants = { "nvim-lsp-installer", "cmp-nvim-lsp", "lua-dev.nvim", "vim-illuminate", "null-ls.nvim" },
+        config = function()
+            require("config.lsp").setup()
+        end,
+        requires = {
+            "williamboman/nvim-lsp-installer",
+            "folke/lua-dev.nvim",
+            "RRethy/vim-illuminate",
+            "jose-elias-alvarez/null-ls.nvim",
+            {
+                "j-hui/fidget.nvim",
+                config = function()
+                    require("fidget").setup {}
+                end,
+            },
+        }
     }
 
     -- Telescope
