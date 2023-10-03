@@ -26,6 +26,7 @@ keymap("n", "<S-l>", ":bn<CR>", opts)
 keymap("n", "<S-c>", ":bd<CR>", opts)
 keymap("n", "<leader>db", ":bp<bar>sp<bar>bn<bar>bd<CR>", opts)
 keymap("n", "<leader>fp", ":!black --target-version py311 %<CR>", opts)
+keymap("n", "<leader>fi", ":!isort %<CR>", opts)
 
 -- execute recorded macro in register q:
 -- vim.cmd [[ nnoremap <C-Space> @q ]]

@@ -14,6 +14,7 @@ local options = {
     guifont = "monospace:h17",               -- the font used in graphical neovim applications
     hlsearch = true,                         -- highlight all matches on previous search pattern
     ignorecase = true,                       -- ignore case in search patterns
+    mousemoveevent = true,
     list = true,
     modeline = true,
     modelines = 5,

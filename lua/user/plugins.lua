@@ -61,10 +61,13 @@ return packer.startup(function(use)
     use "peterhoeg/vim-qml"
     use "dag/vim-fish"                  -- Fish shell syntax
     use "rhysd/conflict-marker.vim"     -- Better highlight of git conflict markers and ability to easier jump around
-    use {
-        'nvim-lualine/lualine.nvim',
-        requires = { 'kyazdani42/nvim-web-devicons', opt = true }
-    }
+
+    use {'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons'}
+    -- use {
+    --     'nvim-lualine/lualine.nvim',
+    --     requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+    -- }
+
     -- use 'kyazdani42/nvim-web-devicons'
     -- use 'kyazdani42/nvim-tree.lua'
     use {
@@ -165,7 +168,7 @@ return packer.startup(function(use)
     -- Github copilot
     -- use "github/copilot.vim"
 
-    -- use 'wakatime/vim-wakatime'         -- automatic time tracking and metrics
+    use 'wakatime/vim-wakatime'         -- automatic time tracking and metrics
     -- Required by wakatime?
     use "kyazdani42/nvim-web-devicons"
 
