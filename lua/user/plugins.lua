@@ -59,7 +59,6 @@ return packer.startup(function(use)
     use "dag/vim-fish"                  -- Fish shell syntax
     use "tomtom/tcomment_vim"
     use "peterhoeg/vim-qml"
-    use "dag/vim-fish"                  -- Fish shell syntax
     use "rhysd/conflict-marker.vim"     -- Better highlight of git conflict markers and ability to easier jump around
 
     use {'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons'}
