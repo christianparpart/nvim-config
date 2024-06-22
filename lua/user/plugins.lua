@@ -85,7 +85,7 @@ return packer.startup(function(use)
                 -- or leave it empty to use the default settings
                 -- refer to the configuration section below
                 height = 5,
-                auto_open = true, -- automatically open the list when you have diagnostics
+                -- auto_open = true, -- automatically open the list when you have diagnostics
                 auto_close = false, -- automatically close the list when you have no diagnostics
                 auto_preview = true, -- automatyically preview the location of the diagnostic. <esc> to close preview and go back to last window
                 auto_fold = false, -- automatically fold a file trouble list at creation

@@ -8,8 +8,9 @@ function soft_sed()
     shift
     for file in "${@}"; do
         if [[ -f "${file}" ]]; then
-            echo "Updating file ${file} with ${regex}"
-            sed -i -e "${regex}" "${file}"
+            real_file=$(realpath "${file}")
+            echo "Updating file ${real_file} with ${regex}"
+            sed -i -e "${regex}" "${real_file}"
         fi
     done
 }
