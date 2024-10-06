@@ -51,6 +51,7 @@ return packer.startup(function(use)
     use 'tpope/vim-fugitive'            -- Git for vim
     use "akinsho/toggleterm.nvim"       -- Embedded term on C-\
     use "folke/which-key.nvim"
+    use "echasnovski/mini.icons"        -- rquired by which-key
     use "yggdroot/indentline"           -- visualize indentation levels
     use 'editorconfig/editorconfig-vim' -- tweaks local VIM session based on .editorconfig
     use "lukas-reineke/indent-blankline.nvim"
@@ -70,9 +71,9 @@ return packer.startup(function(use)
     --     requires = { 'kyazdani42/nvim-web-devicons', opt = true }
     -- }
 
-    -- use 'kyazdani42/nvim-tree.lua'
+    use 'nvim-tree/nvim-tree.lua'
     use {
-        'kyazdani42/nvim-tree.lua',
+        'nvim-tree/nvim-tree.lua',
         requires = {
           'kyazdani42/nvim-web-devicons', -- optional, for file icon
         },
