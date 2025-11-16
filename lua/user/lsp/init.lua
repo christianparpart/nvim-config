@@ -25,53 +25,58 @@ end
 local lspconfig = require('lspconfig')
 local lspHandlers = require("user.lsp.handlers")
 lspHandlers.setup()
-lspconfig.pyright.setup {
+
+vim.lsp.config('pyright', {
     on_attach = lspHandlers.on_attach,
     capabilities = lspHandlers.capabilities,
-}
--- lspconfig.lua_ls.setup {
---     on_attach = lspHandlers.on_attach,
---     capabilities = lspHandlers.capabilities,
---     settings = {
---         Lua = {
---             diagnostics = {
---                 globals = { "vim" },
---             }
---         }
---     }
--- }
+})
+vim.lsp.enable('pyright')
+
+vim.lsp.config('lua_ls', {
+    on_attach = lspHandlers.on_attach,
+    capabilities = lspHandlers.capabilities,
+    settings = {
+        Lua = {
+            diagnostics = {
+                globals = { "vim" },
+            }
+        }
+    }
+})
+vim.lsp.enable('lua_ls')
 
 local HOME = vim.fn.expand("$HOME")
 -- local contour_yml_schema_path = HOME ..  "/projects/contour/docs/contour.schema.json"
 
-lspconfig.yamlls.setup {
-    on_attach = lspHandlers.on_attach,
-    capabilities = lspHandlers.capabilities,
-    settings = {
-        yaml = {
-            schemaStore = {
-                url = "https://www.schemastore.org/api/json/catalog.json",
-                enable = true,
-            },
-            schemas = {
-                -- [contour_yml_schema_path] = {"contour.yml"},
-            }
-        }
-    },
-}
+-- lspconfig.yamlls.setup {
+--     on_attach = lspHandlers.on_attach,
+--     capabilities = lspHandlers.capabilities,
+--     settings = {
+--         yaml = {
+--             schemaStore = {
+--                 url = "https://www.schemastore.org/api/json/catalog.json",
+--                 enable = true,
+--             },
+--             schemas = {
+--                 -- [contour_yml_schema_path] = {"contour.yml"},
+--             }
+--         }
+--     },
+-- }
 
-lspconfig.clangd.setup {
+vim.lsp.config('clangd', {
     on_attach = lspHandlers.on_attach,
     capabilities = lspHandlers.capabilities,
     settings = {
         clangd = {
             cmd = { "/usr/bin/clangd", "--clang-tidy" },
             checkUpdates = true,
-            fallbackFlags = { "-std=c++17", "-Wall", "-Werror" },
+            fallbackFlags = { "-std=c++23", "-Wall", "-Werror" },
             -- trace = "/tmp/clangd.trace.log",
         },
     },
-}
+})
+vim.lsp.enable('clangd')
 
 vim.cmd [[
     augroup my_lsp
@@ -205,21 +210,21 @@ local function extend(tab1, tab2)
     return tab1
 end
 
-local extended_schemas = extend(schemas, default_schemas)
-lspconfig.jsonls.setup {
-    on_attach = lspHandlers.on_attach,
-    capabilities = lspHandlers.capabilities,
-    settings = {
-        json = {
-            schemas = extended_schemas,
-        },
-    },
-    commands = {
-        Format = {
-            function()
-                vim.lsp.buf.range_formatting({}, { 0, 0 }, { vim.fn.line "$", 0 })
-            end,
-        },
-    },
-}
+-- local extended_schemas = extend(schemas, default_schemas)
+-- lspconfig.jsonls.setup {
+--     on_attach = lspHandlers.on_attach,
+--     capabilities = lspHandlers.capabilities,
+--     settings = {
+--         json = {
+--             schemas = extended_schemas,
+--         },
+--     },
+--     commands = {
+--         Format = {
+--             function()
+--                 vim.lsp.buf.range_formatting({}, { 0, 0 }, { vim.fn.line "$", 0 })
+--             end,
+--         },
+--     },
+-- }
 -- }}}
