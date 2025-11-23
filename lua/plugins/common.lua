@@ -14,7 +14,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "onedark_vivid",
+      colorscheme = "onedark",
     },
   },
 
@@ -132,9 +132,37 @@ return {
     },
   },
 
-  { "lewis6991/gitsigns.nvim" },
   { "github/copilot.vim" },
-  { "tpope/vim-fugitive" },
+
+  {
+    "lewis6991/gitsigns.nvim",
+    config = function()
+      -- stage hunk
+      vim.keymap.set(
+        "n",
+        "<leader>hs",
+        ":Gitsigns stage_hunk<CR>",
+        { noremap = true, desc = "git stage hunk - using Gitsigns" }
+      )
+      -- undo stage hunk
+      vim.keymap.set(
+        "n",
+        "<leader>hu",
+        ":Gitsigns undo_stage_hunk<CR>",
+        { noremap = true, desc = "git undo stage hunk - using Gitsigns" }
+      )
+    end,
+  },
+  {
+    "tpope/vim-fugitive",
+    config = function()
+      vim.keymap.set("n", "<leader>gs", ":Git<CR>", { noremap = true, desc = "git status" }) --git status
+      vim.keymap.set("n", "<leader>ga", ":Git add ", { noremap = true, desc = "git add " })
+      vim.keymap.set("n", "<leader>gp", ":Git push --quiet <CR>", { noremap = true, desc = "git push" })
+      vim.keymap.set("n", "<leader>gc", ':Git commit -qam "', { noremap = true, desc = "git commit -am" })
+    end,
+  },
+
   {
     "akinsho/toggleterm.nvim",
     config = true,
@@ -148,6 +176,7 @@ return {
       },
     },
   },
+
   { "editorconfig/editorconfig-vim" },
   { "puremourning/vimspector" },
   { "dag/vim-fish" }, -- fish shell syntax
