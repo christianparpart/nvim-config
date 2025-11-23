@@ -4,6 +4,13 @@
 -- end
 -- require("user.lsp.lsp-installer")
 
+vim.lsp.setup = function(ls, config)
+    if config then
+        vim.lsp.config[ls] = config
+        vim.lsp.enable(ls)
+    end
+end
+
 local mason_ok, mason = pcall(require, "mason")
 if mason_ok then
     mason.setup({
@@ -26,13 +33,12 @@ local lspconfig = require('lspconfig')
 local lspHandlers = require("user.lsp.handlers")
 lspHandlers.setup()
 
-vim.lsp.config('pyright', {
+vim.lsp.setup('pyright', {
     on_attach = lspHandlers.on_attach,
     capabilities = lspHandlers.capabilities,
 })
-vim.lsp.enable('pyright')
 
-vim.lsp.config('lua_ls', {
+vim.lsp.setup('lua_ls', {
     on_attach = lspHandlers.on_attach,
     capabilities = lspHandlers.capabilities,
     settings = {
@@ -43,7 +49,6 @@ vim.lsp.config('lua_ls', {
         }
     }
 })
-vim.lsp.enable('lua_ls')
 
 local HOME = vim.fn.expand("$HOME")
 -- local contour_yml_schema_path = HOME ..  "/projects/contour/docs/contour.schema.json"
@@ -64,17 +69,13 @@ local HOME = vim.fn.expand("$HOME")
 --     },
 -- }
 
-vim.lsp.config('clangd', {
+vim.lsp.setup('clangd', {
     on_attach = lspHandlers.on_attach,
     capabilities = lspHandlers.capabilities,
-    settings = {
-        clangd = {
-            cmd = { "/usr/bin/clangd", "--clang-tidy" },
-            checkUpdates = true,
-            fallbackFlags = { "-std=c++23", "-Wall", "-Werror" },
-            -- trace = "/tmp/clangd.trace.log",
-        },
-    },
+    cmd = { "/usr/bin/clangd", "--clang-tidy" },
+    checkUpdates = true,
+    fallbackFlags = { "-std=c++23", "-Wall", "-Werror" },
+    -- trace = "/tmp/clangd.trace.log",
 })
 vim.lsp.enable('clangd')
 

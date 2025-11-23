@@ -71,7 +71,7 @@ return packer.startup(function(use)
     --     requires = { 'kyazdani42/nvim-web-devicons', opt = true }
     -- }
 
-    use 'nvim-tree/nvim-tree.lua'
+    --use 'nvim-tree/nvim-tree.lua'
     use {
         'nvim-tree/nvim-tree.lua',
         requires = {
