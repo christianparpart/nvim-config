@@ -32,6 +32,14 @@ return {
         vim.lsp.buf.definition()
       end, { desc = "Go to Definition" })
 
+      vim.keymap.set("n", "gd", function()
+        vim.lsp.buf.definition()
+      end, { desc = "Go to Definition" })
+
+      vim.keymap.set("n", "gr", function()
+        vim.lsp.buf.references()
+      end, { desc = "All references" })
+
       vim.keymap.set("n", "<leader>gD", function()
         vim.lsp.buf.declaration()
       end, { desc = "Go to Definition" })
