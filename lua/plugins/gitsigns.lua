@@ -2,14 +2,13 @@ return {
   {
     "lewis6991/gitsigns.nvim",
     config = function()
-      -- stage hunk
       vim.keymap.set(
         "n",
         "<leader>hs",
         ":Gitsigns stage_hunk<CR>",
         { noremap = true, desc = "git stage hunk - using Gitsigns" }
       )
-      -- undo stage hunk
+
       vim.keymap.set(
         "n",
         "<leader>hu",
