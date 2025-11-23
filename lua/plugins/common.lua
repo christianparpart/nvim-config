@@ -23,6 +23,10 @@ return {
   -- change trouble config
   {
     "folke/trouble.nvim",
+    dependencies = {
+      "lewis6991/gitsigns.nvim",
+      "nvim-tree/nvim-web-devicons",
+    },
     -- opts will be merged with the parent spec
     opts = { use_diagnostic_signs = true },
   },
@@ -134,25 +138,6 @@ return {
 
   { "github/copilot.vim" },
 
-  {
-    "lewis6991/gitsigns.nvim",
-    config = function()
-      -- stage hunk
-      vim.keymap.set(
-        "n",
-        "<leader>hs",
-        ":Gitsigns stage_hunk<CR>",
-        { noremap = true, desc = "git stage hunk - using Gitsigns" }
-      )
-      -- undo stage hunk
-      vim.keymap.set(
-        "n",
-        "<leader>hu",
-        ":Gitsigns undo_stage_hunk<CR>",
-        { noremap = true, desc = "git undo stage hunk - using Gitsigns" }
-      )
-    end,
-  },
   {
     "tpope/vim-fugitive",
     config = function()
