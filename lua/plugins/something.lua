@@ -71,8 +71,8 @@ return {
   {
     "neovim/nvim-lspconfig",
     dependencies = {
-      "meson-org/mason.nvim",
-      "meson-org/mason-lspconfig.nvim",
+      "mason-org/mason.nvim",
+      "mason-org/mason-lspconfig.nvim",
     },
     ---@class PluginLspOpts
     opts = {
