@@ -1,3 +1,7 @@
+-- vim.g.mapleader = "<Space>"
+vim.g.mapleader = "<BS>"
+vim.g.maplocalleader = "<BS>"
+
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
   local lazyrepo = "https://github.com/folke/lazy.nvim.git"
@@ -18,9 +22,9 @@ require("lazy").setup({
   spec = {
     -- add LazyVim and import its plugins
     { "LazyVim/LazyVim", import = "lazyvim.plugins" },
-    -- import/override with your plugins
     { import = "lazyvim.plugins.extras.vscode" },
     { import = "lazyvim.plugins.extras.dap.core" },
+    -- my custom plugins
     { import = "plugins" },
   },
   defaults = {

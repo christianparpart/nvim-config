@@ -2,6 +2,24 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 
+local map = LazyVim.safe_keymap_set
+
+local toggle_term = function()
+  Snacks.terminal.toggle(nil, { cwd = ".", win = {
+    style = "float",
+    border = "rounded",
+  } })
+end
+map({ "n", "t" }, "<C-\\>", toggle_term, { desc = "Terminal (cwd)" })
+map({ "n", "t" }, "<C-t>", toggle_term, { desc = "Terminal (cwd)" })
+map("n", "<leader>tt", toggle_term, { desc = "Terminal (cwd)" })
+
+map("n", "<C-Space>", "@q", { desc = "Execute macro in register q" })
+
+map("n", "<C-p>", function()
+  require("telescope.builtin").find_files(require("telescope.themes").get_dropdown({ previewer = false }))
+end, { desc = "Find files (Telescope)" })
+
 if false then
   -- Shorten function name
   local keymap = vim.api.nvim_set_keymap

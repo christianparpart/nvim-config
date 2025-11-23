@@ -4,15 +4,10 @@
 -- * add extra plugins
 -- * disable/enabled LazyVim plugins
 -- * override the configuration of LazyVim plugins
+
+-- vim.g.lazyvim_check_order = false
+
 return {
-  -- require("lazyvim.plugins"),
-  -- require("lazyvim.plugins.extras.dap.core"),
-  -- require("lazyvim.plugins.extras.ai.copilot"),
-
-  -- { "kyazdani42/nvim-web-devicons" }, dependency of a few
-  -- { import = "lazyvim.plugins.extras.lang.python" },
-  -- { import = "lazyvim.plugins.extras.coding.copilot" },
-
   { "olimorris/onedarkpro.nvim" },
 
   -- Configure LazyVim to load gruvbox
@@ -24,8 +19,6 @@ return {
   },
 
   { "ellisonleao/gruvbox.nvim" },
-
-  -- { "nvim-mini/mini.starter", version = "*" },
 
   -- change trouble config
   {
@@ -68,23 +61,6 @@ return {
   },
   { "nvim-telescope/telescope-media-files.nvim" },
 
-  {
-    "neovim/nvim-lspconfig",
-    dependencies = {
-      "mason-org/mason.nvim",
-      "mason-org/mason-lspconfig.nvim",
-    },
-    ---@class PluginLspOpts
-    opts = {
-      ---@type lspconfig.options
-      servers = {
-        -- pyright will be automatically installed with mason and loaded with lspconfig
-        pyright = {},
-        clangd = {},
-      },
-    },
-  },
-
   -- for typescript, LazyVim also includes extra specs to properly setup lspconfig,
   -- treesitter, mason and typescript.nvim. So instead of the above, you can use:
   -- { import = "lazyvim.plugins.extras.lang.typescript" },
@@ -111,20 +87,6 @@ return {
         "yaml",
       },
     },
-  },
-
-  -- since `vim.tbl_deep_extend`, can only merge tables and not lists, the code above
-  -- would overwrite `ensure_installed` with the new value.
-  -- If you'd rather extend the default config, use the code below instead:
-  {
-    "nvim-treesitter/nvim-treesitter",
-    opts = function(_, opts)
-      -- add tsx and treesitter
-      vim.list_extend(opts.ensure_installed, {
-        "tsx",
-        "typescript",
-      })
-    end,
   },
 
   -- the opts function can also be used to change the default opts:
@@ -173,7 +135,19 @@ return {
   { "lewis6991/gitsigns.nvim" },
   { "github/copilot.vim" },
   { "tpope/vim-fugitive" },
-  { "akinsho/toggleterm.nvim" },
+  {
+    "akinsho/toggleterm.nvim",
+    config = true,
+    keys = {
+      -- toggle terminal
+      -- stylua: ignore
+      {
+        "<leader>tt",
+        function() require("toggleterm").toggle(0) end,
+        desc = "Toggle Terminal"
+      },
+    },
+  },
   { "editorconfig/editorconfig-vim" },
   { "puremourning/vimspector" },
   { "dag/vim-fish" }, -- fish shell syntax
@@ -200,14 +174,6 @@ return {
         org_agenda_files = "~/orgfiles/**/*",
         org_default_notes_file = "~/orgfiles/refile.org",
       })
-
-      -- NOTE: If you are using nvim-treesitter with ~ensure_installed = "all"~ option
-      -- rg agenda
-      -- add ~org~ to ignore_install
-      -- require("nvim-treesitter.configs").setup({
-      --   ensure_installed = "all",
-      --   ignore_install = { "org" },
-      -- })
     end,
   },
 }
