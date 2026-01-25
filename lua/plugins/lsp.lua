@@ -8,7 +8,7 @@ return {
     config = function()
       require("mason").setup()
       require("mason-lspconfig").setup({
-        ensure_installed = { "pyright", "clangd" },
+        ensure_installed = { "pyright", "clangd", "cspell-lsp" },
       })
 
       vim.keymap.set("n", "<leader>ts", function()
@@ -63,6 +63,14 @@ return {
       vim.keymap.set("n", "<leader>fd", function()
         vim.lsp.buf.format({ async = true })
       end, { desc = "Format Document" })
+
+      vim.keymap.set("n", "<leader>ca", function()
+        vim.lsp.buf.code_action()
+      end, { desc = "Code Action" })
+
+      vim.keymap.set("n", "<leader>rn", function()
+        vim.lsp.buf.rename()
+      end, { desc = "Rename symbol" })
 
       -- my old config:
       -- local opts = { noremap = true, silent = true }

@@ -170,7 +170,91 @@ return {
   },
 
   { "editorconfig/editorconfig-vim" },
-  { "puremourning/vimspector" },
+
+  {
+    "puremourning/vimspector",
+    keys = {
+      -- start/stop vimspector
+      -- stylua: ignore
+      {
+        "<leader>dr",
+        function() vim.cmd("VimspectorRestart") end,
+        desc = "Vimspector: Restart"
+      },
+      {
+        "<leader>dc",
+        function()
+          vim.cmd("VimspectorContinue")
+        end,
+        desc = "Vimspector: Continue",
+      },
+      {
+        "<leader>de",
+        function()
+          vim.cmd("VimspectorBalloonEval")
+        end,
+        desc = "Vimspector: Evaluate",
+      },
+      {
+        "<leader>dt",
+        function()
+          vim.cmd("VimspectorRunToCursor")
+        end,
+        desc = "Vimspector: Run to Cursor",
+      },
+      {
+        "<leader>dR",
+        function()
+          vim.cmd("VimspectorReset")
+        end,
+        desc = "Vimspector: Reset",
+      },
+      {
+        "<leader>ds",
+        function()
+          vim.cmd("VimspectorToggle")
+        end,
+        desc = "Vimspector: Start/Stop",
+      },
+    },
+  },
+
+  -- {
+  --   "mfussenegger/nvim-dap",
+  --   lazy = true,
+  --   -- Copied from LazyVim/lua/lazyvim/plugins/extras/dap/core.lua and modified.
+  --   keys = {
+  --     {
+  --       "<leader>db",
+  --       function()
+  --         require("dap").toggle_breakpoint()
+  --       end,
+  --       desc = "Toggle Breakpoint",
+  --     },
+  --     {
+  --       "<leader>dc",
+  --       function()
+  --         require("dap").continue()
+  --       end,
+  --       desc = "Continue",
+  --     },
+  --     {
+  --       "<leader>dC",
+  --       function()
+  --         require("dap").run_to_cursor()
+  --       end,
+  --       desc = "Run to Cursor",
+  --     },
+  --     {
+  --       "<leader>dT",
+  --       function()
+  --         require("dap").terminate()
+  --       end,
+  --       desc = "Terminate",
+  --     },
+  --   },
+  -- },
+
   { "dag/vim-fish" }, -- fish shell syntax
   { "rhysd/conflict-marker.vim" }, -- Better highlight of git conflict markers and ability to easier jump around
   { "lunarvim/colorschemes" },
