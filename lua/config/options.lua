@@ -19,3 +19,9 @@ vim.bo.expandtab = true
 -- Enable Undercurl
 -- vim.cmd([[let &t_Cs = "\e[4:3m"]])
 -- vim.cmd([[let &t_Ce = "\e[4:0m"]])
+
+-- Diagnostic sign definitions with emojis
+vim.fn.sign_define("DiagnosticSignError", { text = "❌", texthl = "DiagnosticSignError" })
+vim.fn.sign_define("DiagnosticSignWarn", { text = "⚠️", texthl = "DiagnosticSignWarn" })
+vim.fn.sign_define("DiagnosticSignInfo", { text = "ℹ️", texthl = "DiagnosticSignInfo" })
+vim.fn.sign_define("DiagnosticSignHint", { text = "💡", texthl = "DiagnosticSignHint" })
