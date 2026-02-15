@@ -7,6 +7,20 @@
 -- Or remove existing autocmds by their group name (which is prefixed with `lazyvim_` for the defaults)
 -- e.g. vim.api.nvim_del_augroup_by_name("lazyvim_wrap_spell")
 
+vim.filetype.add({
+  extension = {
+    endo = "endo",
+  },
+})
+
+-- Endo language LSP (Neovim 0.11+ native API)
+vim.lsp.config("endo", {
+  cmd = { "/home/christianparpart/projects/endo/build/clang-debug/src/shell/endo", "--lsp" },
+  filetypes = { "endo" },
+  root_markers = { ".git" },
+})
+vim.lsp.enable("endo")
+
 -- vim.api.nvim_create_autocmd({ "BufEnter", "WinEnter", "CmdwinEnter" }, {
 --   pattern = "*",
 --   callback = function()

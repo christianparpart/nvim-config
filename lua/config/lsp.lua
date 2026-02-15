@@ -9,6 +9,7 @@ lspconfig.clangd.setup({
     "clangd",
     "--background-index",
     "--clang-tidy",
+    "--experimental-modules-support",
     "--header-insertion=iwyu",
 
     -- **Crucial C++ Settings for Modern Code**
@@ -21,3 +22,4 @@ lspconfig.clangd.setup({
   -- Recommended way to tell clangd where your project root is
   root_dir = lspconfig.util.root_pattern(".git", "compile_commands.json", "build", "out"),
 })
+
