@@ -8,7 +8,7 @@ return {
     config = function()
       require("mason").setup()
       require("mason-lspconfig").setup({
-        ensure_installed = { "pyright", "clangd", "cspell-lsp" },
+        ensure_installed = { "pyright", "clangd" },
       })
 
       vim.keymap.set("n", "<leader>ts", function()
@@ -22,6 +22,8 @@ return {
       vim.keymap.set("n", "<A-o>", function()
         vim.cmd("LspClangdSwitchSourceHeader")
       end, { desc = "Switch (C++) header/source" })
+
+      vim.lsp.inlay_hint.enable(true)
 
       vim.keymap.set("n", "<leader>ti", function()
         local is_enabled = vim.lsp.inlay_hint.is_enabled()

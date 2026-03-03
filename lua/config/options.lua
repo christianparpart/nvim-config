@@ -16,6 +16,9 @@ vim.wo.colorcolumn = "110"
 vim.bo.expandtab = true
 -- vim.g.lazyvim_check_order = false
 
+-- Disable spell checking
+vim.opt.spell = false
+
 -- Enable Undercurl
 -- vim.cmd([[let &t_Cs = "\e[4:3m"]])
 -- vim.cmd([[let &t_Ce = "\e[4:0m"]])
