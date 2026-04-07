@@ -8,17 +8,23 @@
 -- vim.g.lazyvim_check_order = false
 
 return {
-  { "olimorris/onedarkpro.nvim" },
+  {
+    "olimorris/onedarkpro.nvim",
+    priority = 1000,
+  },
 
-  -- Configure LazyVim to load gruvbox
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "onedark",
+      colorscheme = function()
+        if vim.o.background == "light" then
+          vim.cmd.colorscheme("onelight")
+        else
+          vim.cmd.colorscheme("onedark")
+        end
+      end,
     },
   },
-
-  { "ellisonleao/gruvbox.nvim" },
 
   -- change trouble config
   {
