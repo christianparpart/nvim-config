@@ -25,6 +25,11 @@ return {
         if vim.b[bufnr].disable_autoformat then
           return nil
         end
+        -- Skip claudecode.nvim's proposed-diff buffers: accepting a diff is a `:w`,
+        -- and formatting it would rewrite Claude's proposal before it is applied.
+        if vim.bo[bufnr].buftype ~= "" then
+          return nil
+        end
         local ft = vim.bo[bufnr].filetype
         if ft == "cpp" or ft == "c" then
           return {
