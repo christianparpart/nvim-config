@@ -10,7 +10,8 @@ local toggle_term = function()
     border = "rounded",
   } })
 end
-map({ "n", "t" }, "<C-\\>", toggle_term, { desc = "Terminal (cwd)" })
+-- NOTE: don't map <C-\>; it is the prefix of Neovim's built-in <C-\><C-n>,
+-- the only universal way out of terminal mode.
 map({ "n", "t" }, "<C-t>", toggle_term, { desc = "Terminal (cwd)" })
 map("n", "<leader>tt", toggle_term, { desc = "Terminal (cwd)" })
 
