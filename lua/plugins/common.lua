@@ -11,17 +11,19 @@ return {
   {
     "olimorris/onedarkpro.nvim",
     priority = 1000,
+    -- Registered here rather than in config/autocmds.lua: LazyVim defers that file to
+    -- VeryLazy when Neovim starts without file arguments, which is after the colorscheme
+    -- is applied. A plugin `init` runs during lazy's startup pass.
+    init = function()
+      require("config.theme").setup()
+    end,
   },
 
   {
     "LazyVim/LazyVim",
     opts = {
       colorscheme = function()
-        if vim.o.background == "light" then
-          vim.cmd.colorscheme("onelight")
-        else
-          vim.cmd.colorscheme("onedark")
-        end
+        require("config.theme").apply()
       end,
     },
   },
@@ -263,7 +265,6 @@ return {
 
   { "dag/vim-fish" }, -- fish shell syntax
   { "rhysd/conflict-marker.vim" }, -- Better highlight of git conflict markers and ability to easier jump around
-  { "lunarvim/colorschemes" },
   { "prettier/vim-prettier" },
   {
     "folke/snacks.nvim",

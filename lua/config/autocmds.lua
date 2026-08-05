@@ -21,16 +21,8 @@ vim.lsp.config("endo", {
 })
 vim.lsp.enable("endo")
 
--- Switch between onedark/onelight when terminal theme changes (Neovim 0.11+ DEC mode 2031)
-vim.api.nvim_create_autocmd("OptionSet", {
-  pattern = "background",
-  callback = function()
-    local theme = vim.o.background == "light" and "onelight" or "onedark"
-    if vim.g.colors_name ~= theme then
-      vim.cmd.colorscheme(theme)
-    end
-  end,
-})
+-- Colorscheme handling (follows the terminal's dark/light theme) lives in config/theme.lua,
+-- registered from the onedarkpro spec in plugins/common.lua.
 
 -- vim.api.nvim_create_autocmd({ "BufEnter", "WinEnter", "CmdwinEnter" }, {
 --   pattern = "*",
