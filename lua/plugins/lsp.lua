@@ -19,9 +19,21 @@ return {
         vim.lsp.buf.typehierarchy("subtypes")
       end, { desc = "Show super types" })
 
-      vim.keymap.set("n", "<A-o>", function()
-        vim.cmd("LspClangdSwitchSourceHeader")
-      end, { desc = "Switch (C++) header/source" })
+      -- LspClangdSwitchSourceHeader is buffer-local, created only where clangd attaches.
+      local function switch_source_header()
+        if vim.fn.exists(":LspClangdSwitchSourceHeader") == 2 then
+          vim.cmd("LspClangdSwitchSourceHeader")
+        else
+          vim.notify("clangd is not attached to this buffer", vim.log.levels.WARN)
+        end
+      end
+
+      -- <A-o> only reaches Neovim when the terminal sends Alt as a Meta prefix.
+      -- macOS composes instead, so Option+o arrives as the literal "ø"; map both,
+      -- plus <leader>ch, which is independent of terminal and keyboard layout.
+      for _, lhs in ipairs({ "<A-o>", "ø", "<leader>ch" }) do
+        vim.keymap.set("n", lhs, switch_source_header, { desc = "Switch (C++) header/source" })
+      end
 
       vim.lsp.inlay_hint.enable(true)
 
